@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creador de personajes 3D · Three.js</title>
+  <meta name="description" content="Explora una sala 3D, recoge piezas, equípalas con drag & drop y comparte tu personaje por link. Hecho con Three.js y TypeScript.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧍</text></svg>">
+  <link rel="stylesheet" href="/src/styles/style.css">
+</head>
+<body>
+  <!-- Aquí Three.js dibujará la escena 3D (el "canvas" se agrega solo) -->
+  <div id="escena"></div>
+
+  <!-- Ayuda en pantalla: controles y aviso de interacción -->
+  <div id="controles-ayuda">WASD: moverse &nbsp;·&nbsp; Click: cámara &nbsp;·&nbsp; E: recoger/espejo &nbsp;·&nbsp; I: inventario &nbsp;·&nbsp; Espacio: saltar &nbsp;·&nbsp; T: bailar</div>
+  <div id="mensaje-prueba" class="oculto"></div>
+  <div id="aviso-interaccion" class="oculto"></div>
+
+  <!-- Ventana de inventario drag&drop estilo Minecraft -->
+  <div id="inventario" class="oculto">
+    <div id="inventario-caja">
+      <h2>Inventario <span id="inventario-cerrar-hint">(arrastra al muñeco · I para cerrar)</span></h2>
+      <div class="inv-columnas">
+        <div>
+          <h3>Tu cuerpo</h3>
+          <div id="inv-muneco">
+            <div class="slot-cuerpo slot-cabeza" data-slot="cabeza"></div>
+            <div class="slot-cuerpo slot-alas" data-slot="alas"></div>
+            <div class="slot-cuerpo slot-brazoIzq" data-slot="brazoIzq"></div>
+            <div class="slot-cuerpo slot-torso" data-slot="torso"></div>
+            <div class="slot-cuerpo slot-brazoDer" data-slot="brazoDer"></div>
+            <div class="slot-cuerpo slot-piernaIzq" data-slot="piernaIzq"></div>
+            <div class="slot-cuerpo slot-piernaDer" data-slot="piernaDer"></div>
+          </div>
+          <div class="inv-vacio">Arrastra una pieza de la mochila al cuerpo. Arrastra del cuerpo a la mochila para quitar.</div>
+          <div class="inv-acciones">
+            <button id="btn-compartir" type="button">🔗 Copiar link de mi personaje</button>
+            <button id="btn-reiniciar" type="button">↺ Reiniciar</button>
+          </div>
+        </div>
+        <div>
+          <h3>Mochila</h3>
+          <div id="inv-mochila"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- type="module" permite usar import/export entre archivos -->
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
