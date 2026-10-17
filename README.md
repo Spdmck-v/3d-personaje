@@ -2,7 +2,7 @@
 
 Explore a 3D room, pick up body parts from the shelves, equip them with drag & drop and **share your character with a link**. Built with **Three.js + TypeScript + Vite**. Every model is generated procedurally from code: no external 3D assets.
 
-**[▶ Live demo](https://Spdmck-v.github.io/3d-personaje/)** · *(Spanish UI)*
+*(UI in Spanish)*
 
 | Explore the room | Dress your character |
 |---|---|
